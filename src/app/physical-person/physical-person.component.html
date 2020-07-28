@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">სახელი</th>
+          <th scope="col">გვარი</th>
+          <th scope="col">სქესი</th>
+          <th scope="col">ID</th>
+          <th scope="col">ასაკი</th>
+          <th scope="col">ტელ. ნომერი</th>
+          <th scope="col">კავშირები</th>
+          <th scope="col">ქმედება</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-active">
+          <td scope="row">გიორგი</td>
+          <td>დათუნაშვილი</td>
+          <td>მამრობითი</td>
+          <td>01154019864</td>
+          <td>27</td>
+          <td>599 84-48-77</td>
+          <td>მეზობელი</td>
+          <td><a class="btn btn-primary text-light">ვრცლად</a></td>
+        </tr>
+        <tr>
+          <td scope="row">ანა</td>
+          <td>ბერბიჭაშვილი</td>
+          <td>ქალი</td>
+          <td>016606+2541</td>
+          <td>28</td>
+          <td>599 84-48-77</td>
+          <td>ცოლი</td>
+          <td><a class="btn btn-primary text-light">ვრცლად</a></td>
+        </tr>
+      </tbody>
+      <p>Dynamic Row APi</p>
+      <tbody>
+        <tr class="table-active" *ngFor="let person of result">
+          <td scope="row">{{person.name}}</td>
+          <td>{{person.surname}}</td>
+          <td>{{person.gender}}</td>
+          <td>01154019864</td>
+          <td>27</td>
+          <td>599 84-48-77</td>
+          <td>მეზობელი</td>
+          <td><a class="btn btn-primary text-light">ვრცლად</a></td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>

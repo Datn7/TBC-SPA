@@ -1,0 +1,107 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a
+    class="navbar-brand"
+    [routerLink]="['/home']"
+    routerLinkActive="router-link-active"
+    >TBC</a
+  >
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarColor01"
+    aria-controls="navbarColor01"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto" *ngIf="loggedIn()">
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          [routerLink]="['/home']"
+          routerLinkActive="router-link-active"
+          >მთავარი <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/list']"
+          routerLinkActive="router-link-active"
+          >სია</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/edit']"
+          routerLinkActive="router-link-active"
+          >ახლის დამატება</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/weather']"
+          routerLinkActive="router-link-active"
+          >ამინდი</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/products']"
+          routerLinkActive="router-link-active"
+          >პროდუქტები</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/templateDrivenForm']"
+          routerLinkActive="router-link-active"
+          >Template Driven</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/reactiveForm']"
+          routerLinkActive="router-link-active"
+          >Reactive Form</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/babylonJS']"
+          routerLinkActive="router-link-active"
+          >Babylon</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/ThreeJS']"
+          routerLinkActive="router-link-active"
+          >ThreeJS</a
+        >
+      </li>
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0">
+      <input
+        class="form-control mr-sm-2"
+        type="text"
+        placeholder="ჩაწერეთ ტექსტი"
+      />
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+        ძებნა
+      </button>
+    </form>
+  </div>
+</nav>

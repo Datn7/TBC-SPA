@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-3">
+      <form (ngSubmit)="saveUser()" [formGroup]="userForm">
+        <fieldset>
+          <legend><b>ახალი ფიზიკური პირი</b></legend>
+
+          <div class="form-group">
+            <label for="pName">სახელი</label>
+            <input
+              type="text"
+              class="form-control"
+              id="pName"
+              placeholder="სახელი"
+              formControlName="name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="pName">გვარი</label>
+            <input
+              type="text"
+              class="form-control"
+              id="pName"
+              placeholder="გვარი"
+              formControlName="surname"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="pgender">სქესი</label>
+            <select class="custom-select" formControlName="gender">
+              <option value="კაცი">კაცი</option>
+              <option value="ქალი">ქალი</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="pId">პირადი ნომერი</label>
+            <input
+              type="text"
+              class="form-control"
+              id="pId"
+              placeholder="პირად ნომერი"
+              formControlName="idNumber"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="date">დაბადების თარიღი</label>
+            <input
+              type="text"
+              placeholder="აირჩიეთ თარიღი"
+              class="form-control"
+              id="date"
+              bsDatepicker
+              formControlName="date"
+            />
+          </div>
+
+          <div class="form-group">
+            <div class="custom-control custom-checkbox">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="customCheck1"
+                checked=""
+                formControlName="agree"
+              />
+              <label class="custom-control-label" for="customCheck1"
+                >ვეთანხმები წესებს რომელიც არ არსებობს</label
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <input
+                  type="file"
+                  class="custom-file-input"
+                  id="inputGroupFile02"
+                />
+                <label class="custom-file-label" for="inputGroupFile02"
+                  >აირჩიეთ სურათი</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">დამატება</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

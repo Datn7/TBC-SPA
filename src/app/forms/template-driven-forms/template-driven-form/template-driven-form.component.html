@@ -1,0 +1,125 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="form-group">
+          <label for="name" class="col-sm-2 col-form-label">სახელი</label>
+          <div class="col-sm-12">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              [(ngModel)]="user.name"
+              required
+              #nameField="ngModel"
+              (blur)="onBlur(nameField)"
+              [class.field-error]="form.submitted && nameField.invalid"
+            />
+            <div
+              [hidden]="!form.submitted || nameField.valid"
+              class="alert alert-danger"
+            >
+              შეიყვანე სახელი
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="surname" class="col-sm-2 col-form-label">გვარი</label>
+          <div class="col-sm-12">
+            <input
+              type="text"
+              class="form-control"
+              id="surname"
+              name="surname"
+              [(ngModel)]="user.surname"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <p>აირჩიეთ სქესი</p>
+          <div class="custom-control custom-radio">
+            <input
+              type="radio"
+              id="customRadio1"
+              name="gender"
+              class="custom-control-input"
+              checked=""
+              value="კაცი"
+              [(ngModel)]="user.gender"
+            />
+            <label class="custom-control-label" for="customRadio1">კაცი</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input
+              type="radio"
+              id="customRadio2"
+              name="gender"
+              class="custom-control-input"
+              value="ქალი"
+              [(ngModel)]="user.gender"
+            />
+            <label class="custom-control-label" for="customRadio2">ქალი</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleSelect1">აირჩიეთ ქალაქი</label>
+          <select
+            class="form-control"
+            id="exampleSelect1"
+            name="city"
+            [(ngModel)]="user.city"
+          >
+            <option>თბილისი</option>
+            <option>ბათუმი</option>
+            <option>თელავი</option>
+            <option>რუსთავი</option>
+            <option>ევას პავაროტი</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="date">დაბადების თარიღი</label>
+          <input type="date" class="form-control" />
+        </div>
+
+        <div class="col-xs-12 col-12 col-md-4 form-group">
+          <input
+            type="text"
+            placeholder="აირჩიეთ თარიღი"
+            class="form-control"
+            id="date"
+            name="date"
+            [(ngModel)]="user.date"
+            bsDatepicker
+          />
+        </div>
+
+        <div class="form-group">
+          <div class="custom-control custom-checkbox">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="customCheck1"
+              checked=""
+              name="agree"
+              [(ngModel)]="user.agree"
+            />
+            <label class="custom-control-label" for="customCheck1"
+              >ვეთანხმები წესებს რომელიც არ არსებობს</label
+            >
+          </div>
+        </div>
+
+        <button class="btn btn-primary">გაგზავნა</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<h3>{{ originalUser | json }}</h3>
+
+{{ form.value | json }}
