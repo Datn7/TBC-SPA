@@ -28,7 +28,7 @@
     "geokbd-angular": "^1.0.4",
     "ngx-bootstrap": "^5.6.1",
     "rxjs": "~6.5.4",
-    "three": "^0.115.0",
+    "three": "^0.137.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
